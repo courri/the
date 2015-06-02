@@ -336,3 +336,30 @@ attributes(u)
 attributes(v)
 
 
+##3.7 矩阵的行和列的命名问题
+
+z = matrix((1:4),nrow = 2)
+z
+
+
+colnames(z)
+rownames(z)
+
+
+colnames(z)<-c("a","b")
+colnames(z)
+z
+
+
+z[,"a"]
+
+colnames(z)<-c("第一列","第二列")
+rownames(z)<-c("第一行","第二行")
+z
+
+z[,"第二列"]
+z["第一行",]
+
+
+
+####3.8高维数组

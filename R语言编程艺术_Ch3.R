@@ -293,3 +293,46 @@ nrow<-function(x) dim(x)[1]
 library("Matrix", lib.loc="C:/Program Files/R/R-3.0.2/library")
 
 Hilbert(6)
+
+
+##3.6避免意外降维
+z = matrix((1:8),nrow = 4)
+z
+
+r <- z[2,]
+r
+
+
+attributes(z)
+
+attributes(r)
+
+
+str(z)
+str(r)
+
+
+###
+
+r<-z[2,, drop = FALSE]  ##这个操作经常需要做！！！
+r
+
+
+dim(r)
+
+##
+
+z[3,2]
+
+"["  (z,3,2)
+
+
+##
+
+u = 1:3
+v<- as.matrix(u)
+
+attributes(u)
+attributes(v)
+
+
